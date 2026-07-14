@@ -1,0 +1,644 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>HANDWERK KOMPAKT – Führung für Inhaber | WINTERFEST Leadership Academy</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet" />
+  <style>
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+    body { font-family: 'Inter', sans-serif; color: #1a2e4a; background: #ffffff; line-height: 1.7; }
+
+    /* ========== NAV ========== */
+    nav { position: fixed; top: 0; width: 100%; background: rgba(255,255,255,0.97); backdrop-filter: blur(10px); z-index: 1000; padding: 8px 0; border-bottom: 1px solid #e5e5e5; }
+    nav .nav-inner { max-width: 1200px; margin: 0 auto; padding: 0 24px; display: flex; justify-content: space-between; align-items: center; }
+    nav .logo img { height: 56px; width: auto; display: block; }
+    nav .nav-links { display: flex; gap: 22px; list-style: none; align-items: center; }
+    nav .nav-links a { text-decoration: none; color: #555; font-size: 14px; font-weight: 500; transition: color 0.3s; white-space: nowrap; }
+    nav .nav-links a:hover { color: #fe745c; }
+    .nav-cta { background: #fe745c; color: #fff !important; padding: 10px 18px; border-radius: 6px; font-weight: 600 !important; }
+    .nav-cta:hover { background: #e55d45 !important; color: #fff !important; }
+
+    /* ========== GENERAL ========== */
+    .container { max-width: 1200px; margin: 0 auto; padding: 0 24px; }
+    section { padding: 88px 24px; }
+    .section-label { font-size: 12px; font-weight: 700; letter-spacing: 3px; text-transform: uppercase; color: #fe745c; margin-bottom: 16px; }
+    .section-title { font-size: 38px; font-weight: 800; line-height: 1.2; margin-bottom: 16px; max-width: 820px; }
+    .section-subtitle { font-size: 18px; color: #666; max-width: 860px; line-height: 1.7; }
+
+    /* ========== HERO ========== */
+    .hero { padding: 164px 24px 88px; background: #f4f6f9; text-align: center; }
+    .hero .section-label { margin-bottom: 24px; }
+    .hero h1 { font-size: 54px; font-weight: 800; line-height: 1.15; max-width: 940px; margin: 0 auto 28px; }
+    .hero h1 em { color: #fe745c; font-style: normal; }
+    .hero .hero-lead { font-size: 19px; color: #555; max-width: 760px; margin: 0 auto 44px; line-height: 1.75; }
+    .hero-cta-group { display: flex; gap: 16px; justify-content: center; flex-wrap: wrap; }
+    .btn-primary { display: inline-block; background: #1a2e4a; color: #fff; padding: 16px 40px; font-size: 16px; font-weight: 600; text-decoration: none; border-radius: 6px; transition: background 0.3s; }
+    .btn-primary:hover { background: #fe745c; }
+    .btn-secondary { display: inline-block; background: transparent; color: #1a2e4a; padding: 16px 40px; font-size: 16px; font-weight: 600; text-decoration: none; border-radius: 6px; border: 2px solid #1a2e4a; transition: all 0.3s; }
+    .btn-secondary:hover { border-color: #fe745c; color: #fe745c; }
+    .hero-sub { margin-top: 14px; font-size: 13px; color: #999; }
+    .hero-badges { display: flex; justify-content: center; gap: 36px; margin-top: 60px; flex-wrap: wrap; }
+    .hero-badge { font-size: 14px; color: #666; display: flex; align-items: center; gap: 8px; }
+    .hero-badge strong { color: #1a2e4a; }
+
+    /* ========== INTRO SCENE ========== */
+    .intro-scene { background: #ffffff; }
+    .intro-scene-inner { display: grid; grid-template-columns: 1fr 1fr; gap: 0; min-height: 480px; margin-top: 48px; border-radius: 12px; overflow: hidden; }
+    .intro-scene-img { background: url('Werkstatt.png') center center / cover no-repeat; min-height: 320px; }
+    .intro-scene .scene-box { background: #f4f6f9; padding: 48px 44px; display: flex; flex-direction: column; justify-content: center; }
+    .intro-scene .scene-box p { font-size: 17px; color: #333; line-height: 1.85; margin-bottom: 16px; }
+    .intro-scene .scene-box p:last-child { margin-bottom: 0; font-weight: 700; color: #1a2e4a; }
+    .intro-scene .scene-box p strong { color: #fe745c; }
+    @media (max-width: 768px) { .intro-scene-inner { grid-template-columns: 1fr; } .intro-scene-img { min-height: 240px; } }
+
+    /* ========== PROGRAMME ========== */
+    .programme { background: #f4f6f9; }
+    .programme-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 24px; margin-top: 48px; }
+    .prog-card { background: #fff; border-radius: 12px; border: 1px solid #eee; padding: 40px; }
+    .prog-card .prog-tag { display: inline-block; font-size: 11px; font-weight: 700; letter-spacing: 2px; text-transform: uppercase; color: #fe745c; margin-bottom: 16px; }
+    .prog-card h3 { font-size: 24px; font-weight: 800; margin-bottom: 8px; }
+    .prog-card .prog-sub { font-size: 15px; color: #888; font-style: italic; margin-bottom: 20px; }
+    .prog-card p { font-size: 15px; color: #555; line-height: 1.7; margin-bottom: 12px; }
+    .prog-card .price-row { margin-top: 28px; padding-top: 24px; border-top: 1px solid #f0f0f0; display: flex; align-items: baseline; gap: 10px; flex-wrap: wrap; }
+    .prog-card .price { font-size: 32px; font-weight: 800; color: #1a2e4a; }
+    .prog-card .price-note { font-size: 13px; color: #999; }
+    .prog-card .btn-coral { display: inline-block; background: #fe745c; color: #fff; padding: 14px 32px; font-size: 15px; font-weight: 600; text-decoration: none; border-radius: 6px; transition: background 0.3s; margin-top: 20px; }
+    .prog-card .btn-coral:hover { background: #e55d45; }
+
+    /* ========== ALARM ========== */
+    .alarm { background: #ffffff; }
+    .alarm h2 { font-size: 36px; font-weight: 800; line-height: 1.25; max-width: 820px; margin-bottom: 16px; color: #1a2e4a; }
+    .alarm-lead { font-size: 17px; color: #555; max-width: 760px; line-height: 1.7; margin-bottom: 48px; }
+    .alarm-cols { display: grid; grid-template-columns: 1fr 1fr; gap: 32px; }
+    .alarm-col h3 { font-size: 16px; font-weight: 700; color: #1a2e4a; margin-bottom: 24px; padding-bottom: 12px; border-bottom: 2px solid #fe745c; }
+    .alarm-list-items { display: flex; flex-direction: column; gap: 16px; }
+    .alarm-item { background: #fff; padding: 22px 20px; border-radius: 10px; border-left: 4px solid #fe745c; box-shadow: 0 2px 12px rgba(0,0,0,0.05); display: flex; gap: 16px; align-items: flex-start; }
+    .alarm-num { font-size: 22px; font-weight: 800; color: #fe745c; line-height: 1; flex-shrink: 0; min-width: 28px; }
+    .alarm-item p { font-size: 15px; color: #444; line-height: 1.55; }
+    .alarm-bridge { margin-top: 48px; max-width: 860px; background: #f4f6f9; border-radius: 12px; padding: 32px 36px; }
+    .alarm-bridge p { font-size: 17px; color: #333; line-height: 1.8; }
+    .alarm-bridge strong { color: #fe745c; }
+
+    /* ========== THEMEN ========== */
+    .themen { background: #f4f6f9; }
+    .themen-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 24px; margin-top: 48px; }
+    .thema-card { background: #fff; padding: 36px 32px; border-radius: 12px; border: 1px solid #eee; }
+    .thema-num { font-size: 12px; font-weight: 700; letter-spacing: 2px; text-transform: uppercase; color: #fe745c; margin-bottom: 14px; }
+    .thema-card h3 { font-size: 19px; font-weight: 700; margin-bottom: 12px; }
+    .thema-card p { font-size: 15px; color: #555; line-height: 1.65; }
+
+    /* ========== ABLAUF ========== */
+    .ablauf { background: #ffffff; }
+    .ablauf-cols { display: grid; grid-template-columns: 1fr 1fr; gap: 40px; margin-top: 48px; }
+    .ablauf-col .col-tag { font-size: 11px; font-weight: 700; letter-spacing: 2px; text-transform: uppercase; color: #fe745c; margin-bottom: 16px; display: block; }
+    .ablauf-col h3 { font-size: 20px; font-weight: 800; margin-bottom: 24px; }
+    .woche-list { list-style: none; }
+    .woche-list li { display: grid; grid-template-columns: 72px 1fr; gap: 12px; padding: 14px 0; border-bottom: 1px solid #f0f0f0; font-size: 15px; }
+    .woche-list li:last-child { border-bottom: none; }
+    .woche-label { font-size: 11px; font-weight: 700; color: #fe745c; letter-spacing: 0.05em; padding-top: 3px; }
+    .woche-text strong { display: block; font-weight: 700; color: #1a2e4a; margin-bottom: 2px; }
+    .woche-text span { color: #888; font-size: 13px; }
+    .block-list { list-style: none; }
+    .block-list li { padding: 16px 0; border-bottom: 1px solid #f0f0f0; font-size: 15px; }
+    .block-list li:last-child { border-bottom: none; }
+    .block-list li strong { display: block; font-weight: 700; color: #1a2e4a; margin-bottom: 4px; }
+    .block-list li span { color: #666; font-size: 14px; line-height: 1.6; }
+    .ablauf-note { margin-top: 16px; font-size: 14px; color: #888; line-height: 1.7; }
+
+    /* ========== NUTZEN ========== */
+    .nutzen { background: #f4f6f9; }
+    .nutzen-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 24px; margin-top: 48px; }
+    .nutzen-card { background: #fff; padding: 36px 32px; border-radius: 12px; border: 1px solid #eee; }
+    .nutzen-icon { font-size: 28px; margin-bottom: 16px; }
+    .nutzen-card h3 { font-size: 19px; font-weight: 700; margin-bottom: 10px; }
+    .nutzen-card p { font-size: 15px; color: #555; line-height: 1.65; }
+    .nutzen-messbar { margin-top: 48px; max-width: 860px; background: #1a2e4a; border-radius: 12px; padding: 36px 40px; }
+    .nutzen-messbar h3 { font-size: 16px; font-weight: 700; color: #fe745c; letter-spacing: 1px; text-transform: uppercase; margin-bottom: 20px; }
+    .nutzen-messbar ul { list-style: none; }
+    .nutzen-messbar ul li { font-size: 15px; color: rgba(255,255,255,0.85); padding: 7px 0; border-bottom: 1px solid rgba(255,255,255,0.1); display: flex; align-items: flex-start; gap: 10px; }
+    .nutzen-messbar ul li::before { content: "✓"; color: #fe745c; font-weight: 700; flex-shrink: 0; }
+    .nutzen-satz { margin-top: 28px; font-size: 17px; font-weight: 700; color: rgba(255,255,255,0.95); line-height: 1.5; }
+
+    /* ========== EINSTIEG ========== */
+    .einstieg { background: #ffffff; }
+    .einstieg-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 32px; margin-top: 48px; }
+    .einstieg-card { padding: 40px; border-radius: 12px; }
+    .einstieg-card.primary { background: #1a2e4a; color: #fff; }
+    .einstieg-card.secondary { background: #f4f6f9; border: 1px solid #eee; }
+    .einstieg-card h3 { font-size: 22px; font-weight: 800; margin-bottom: 8px; }
+    .einstieg-card.primary h3 { color: #fff; }
+    .einstieg-card .einstieg-label { font-size: 11px; font-weight: 700; letter-spacing: 2px; text-transform: uppercase; color: #fe745c; margin-bottom: 16px; }
+    .einstieg-card p { font-size: 15px; line-height: 1.7; margin-bottom: 12px; }
+    .einstieg-card.primary p { color: rgba(255,255,255,0.8); }
+    .einstieg-card.secondary p { color: #555; }
+    .einstieg-card ul { list-style: none; margin-bottom: 24px; }
+    .einstieg-card ul li { font-size: 15px; padding: 6px 0; border-bottom: 1px solid rgba(255,255,255,0.1); display: flex; align-items: flex-start; gap: 8px; }
+    .einstieg-card.secondary ul li { border-bottom-color: #f0f0f0; color: #555; }
+    .einstieg-card.primary ul li { color: rgba(255,255,255,0.85); }
+    .einstieg-card ul li::before { content: "→"; color: #fe745c; font-weight: 700; flex-shrink: 0; }
+    .einstieg-card .btn-coral { display: inline-block; background: #fe745c; color: #fff; padding: 14px 32px; font-size: 15px; font-weight: 600; text-decoration: none; border-radius: 6px; transition: background 0.3s; margin-top: 8px; }
+    .einstieg-card .btn-coral:hover { background: #e55d45; }
+
+    /* ========== FAQ ========== */
+    .faq { background: #f4f6f9; }
+    .faq-list { max-width: 860px; margin: 48px auto 0; }
+    .faq-item { border-bottom: 1px solid #e5e5e5; background: #fff; margin-bottom: 2px; border-radius: 8px; overflow: hidden; }
+    .faq-question { padding: 22px 28px; font-size: 17px; font-weight: 700; color: #1a2e4a; cursor: pointer; display: flex; justify-content: space-between; align-items: center; gap: 16px; text-align: left; width: 100%; border: none; background: none; }
+    .faq-question::after { content: "+"; font-size: 24px; font-weight: 300; color: #999; transition: transform 0.3s; flex-shrink: 0; }
+    .faq-item.active .faq-question::after { content: "−"; }
+    .faq-answer { max-height: 0; overflow: hidden; transition: max-height 0.4s ease, padding 0.3s; font-size: 15px; color: #666; line-height: 1.8; padding: 0 28px; }
+    .faq-item.active .faq-answer { max-height: 400px; padding: 0 28px 24px; }
+
+    /* ========== TRAINER ========== */
+    .trainer { background: #ffffff; }
+    .trainer-card { background: #f4f6f9; padding: 40px; border-radius: 12px; border: 1px solid #eee; max-width: 680px; }
+    .trainer-photo { width: 80px; height: 80px; border-radius: 50%; background: #dde3ec; margin-bottom: 20px; display: flex; align-items: center; justify-content: center; font-size: 28px; color: #1a2e4a; font-weight: 700; }
+    .trainer-card h3 { font-size: 22px; font-weight: 800; margin-bottom: 4px; }
+    .trainer-card .trainer-role { font-size: 12px; color: #fe745c; font-weight: 700; letter-spacing: 1px; text-transform: uppercase; margin-bottom: 20px; }
+    .trainer-card p { font-size: 15px; color: #555; line-height: 1.7; margin-bottom: 10px; }
+    .trainer-stats { display: flex; flex-wrap: wrap; gap: 8px; margin: 16px 0; }
+    .trainer-stat { background: #fff; border-radius: 8px; padding: 8px 14px; font-size: 13px; font-weight: 700; color: #1a2e4a; }
+    .trainer-contact { font-size: 13px; color: #888; margin-top: 16px; }
+    .trainer-contact a { color: #1a2e4a; text-decoration: none; }
+    .trainer-contact a:hover { color: #fe745c; }
+
+    /* ========== FINAL CTA ========== */
+    .final-cta { background: #1a2e4a; color: #fff; text-align: center; padding: 88px 24px; }
+    .final-cta h2 { font-size: 42px; font-weight: 800; margin-bottom: 16px; line-height: 1.2; }
+    .final-cta p { font-size: 18px; color: rgba(255,255,255,0.7); max-width: 720px; margin: 0 auto 40px; line-height: 1.7; }
+    .final-cta .btn-coral-lg { display: inline-block; background: #fe745c; color: #fff; padding: 18px 48px; font-size: 17px; font-weight: 700; text-decoration: none; border-radius: 6px; transition: background 0.3s; }
+    .final-cta .btn-coral-lg:hover { background: #e55d45; }
+    .cta-email-line { margin-top: 20px; font-size: 15px; color: rgba(255,255,255,0.55); }
+    .cta-email-line a { color: rgba(255,255,255,0.85); text-decoration: none; }
+    .cta-email-line a:hover { color: #fe745c; }
+
+    /* ========== FOOTER ========== */
+    footer { background: #f4f6f9; padding: 36px 24px; text-align: center; font-size: 13px; color: #999; }
+    .footer-links { display: flex; justify-content: center; gap: 24px; margin-bottom: 12px; flex-wrap: wrap; }
+    .footer-links a { color: #999; text-decoration: none; font-size: 13px; }
+    .footer-links a:hover { color: #555; }
+
+    /* ========== MOBILE NAV ========== */
+    .nav-toggle { display: none; width: 44px; height: 44px; align-items: center; justify-content: center; border: none; background: transparent; cursor: pointer; border-radius: 8px; padding: 0; z-index: 1100; }
+    .hamburger { display: block; width: 22px; height: 2px; background: #1a2e4a; position: relative; transition: background 0.2s; }
+    .hamburger::before, .hamburger::after { content: ''; position: absolute; left: 0; right: 0; height: 2px; background: #1a2e4a; transition: transform 0.25s; }
+    .hamburger::before { top: -7px; }
+    .hamburger::after { top: 7px; }
+    .nav-open .hamburger { background: transparent; }
+    .nav-open .hamburger::before { transform: rotate(45deg) translate(5px, 5px); }
+    .nav-open .hamburger::after { transform: rotate(-45deg) translate(5px, -5px); }
+    .nav-open nav .nav-links { display: flex !important; flex-direction: column; gap: 0; position: fixed; top: 0; left: 0; right: 0; bottom: 0; background: rgba(255,255,255,0.98); backdrop-filter: blur(12px); justify-content: center; align-items: center; z-index: 1050; padding: 80px 24px 40px; }
+    .nav-open nav .nav-links li { width: 100%; text-align: center; border-bottom: 1px solid #f0f0f0; }
+    .nav-open nav .nav-links a { display: block; padding: 18px 0; font-size: 20px; font-weight: 700; color: #1a2e4a; }
+
+    /* ========== RESPONSIVE ========== */
+    @media (max-width: 768px) {
+      .hero { padding: 110px 16px 60px; }
+      .hero h1 { font-size: 28px; hyphens: auto; -webkit-hyphens: auto; }
+      .hero .hero-lead { font-size: 16px; }
+      .hero-badges { gap: 12px; flex-direction: column; align-items: flex-start; padding: 0 4px; }
+      .programme-grid { grid-template-columns: 1fr; }
+      .alarm-cols { grid-template-columns: 1fr; }
+      .themen-grid { grid-template-columns: 1fr; }
+      .ablauf-cols { grid-template-columns: 1fr; }
+      .nutzen-grid { grid-template-columns: 1fr; }
+      .einstieg-grid { grid-template-columns: 1fr; }
+      nav .nav-links { display: none; }
+      .nav-toggle { display: inline-flex; }
+      .final-cta h2 { font-size: 28px; }
+      section { padding: 60px 16px; }
+      .section-title { font-size: 28px; }
+    }
+
+    a:focus, button:focus { outline: 3px solid rgba(254,116,92,0.35); outline-offset: 2px; }
+  </style>
+</head>
+<body>
+
+  <!-- NAV -->
+  <nav>
+    <div class="nav-inner">
+      <div class="logo">
+        <a href="https://winterfest.academy">
+          <img src="Winterfest-Leadership-Academy-2-g.png" alt="WINTERFEST Leadership Academy" onerror="this.style.display='none'; this.nextElementSibling.style.display='block';" />
+          <span style="display:none; font-size:15px; font-weight:800; color:#1a2e4a;">WINTERFEST</span>
+        </a>
+      </div>
+      <ul class="nav-links">
+        <li><a href="#programme">Programme</a></li>
+        <li><a href="#themen">Themen</a></li>
+        <li><a href="#ablauf">Ablauf</a></li>
+        <li><a href="#faq">FAQ</a></li>
+        <li><a href="#kontakt" class="nav-cta">Gespräch anfragen</a></li>
+      </ul>
+      <button class="nav-toggle" id="navToggle" aria-label="Menü öffnen">
+        <span class="hamburger"></span>
+      </button>
+    </div>
+  </nav>
+
+  <!-- HERO -->
+  <section class="hero">
+    <p class="section-label">Handwerk Kompakt</p>
+    <h1>Führung lernen, ohne den Betrieb <em>zu stoppen.</em></h1>
+    <p class="hero-lead">Für Inhaber von Handwerksbetrieben bis fünf Mitarbeitende. Kein Seminar, keine Theorie, die drei Wochen später vergessen ist. Sondern Werkzeuge, die am Montag danach greifen.</p>
+    <div class="hero-cta-group">
+      <a href="#kontakt" class="btn-primary">Gespräch anfragen</a>
+      <a href="#programme" class="btn-secondary">Programme ansehen</a>
+    </div>
+    <p class="hero-sub">Zwei Formate · Online oder vor Ort · Einstieg über Gespräch</p>
+    <div class="hero-badges">
+      <span class="hero-badge">🛠 <strong>Handwerk</strong> &nbsp;Betriebe bis 5 MA</span>
+      <span class="hero-badge">📅 <strong>Online</strong> &nbsp;6 Wochen · max. 12 Inhaber</span>
+      <span class="hero-badge">📍 <strong>Vor Ort</strong> &nbsp;1 Tag · exklusiv für Ihr Unternehmen</span>
+    </div>
+  </section>
+
+  <!-- INTRO SCENE -->
+  <section class="intro-scene">
+    <div class="container">
+      <p class="section-label">Die Ausgangslage</p>
+      <h2 class="section-title">Sie führen. Aber niemand hat Ihnen je gezeigt, wie.</h2>
+      <div class="intro-scene-inner">
+        <div class="intro-scene-img" role="img" aria-label="Handwerksbetrieb"></div>
+        <div class="scene-box">
+          <p>Stellen Sie sich vor, es ist Montagmorgen. Einer Ihrer Leute hat am Freitag wieder einen Auftrag verbockt. Nicht zum ersten Mal. Sie haben es kommen sehen, aber nichts gesagt, weil keine Zeit war und weil Sie ehrlich gesagt auch nicht genau wussten, wie Sie es ansprechen sollen, ohne dass es eskaliert. Also haben Sie es laufen lassen. Und jetzt sitzt das Problem auf Ihrem Tisch.</p>
+          <p>Das ist kein Versagen. Das ist der Alltag in einem kleinen Betrieb, in dem der Chef gleichzeitig Fachkraft, Kundenbetreuer, Personalverantwortlicher und Feuerwehr ist. Führung bleibt dabei auf der Strecke, nicht weil Sie es nicht wollen, sondern weil niemand Ihnen je gezeigt hat, wie das konkret geht, wenn fünf Leute auf Sie schauen und der Auftragsstapel nicht kleiner wird.</p>
+          <p><strong>Genau hier setzt HANDWERK KOMPAKT an.</strong></p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- PROGRAMME -->
+  <section class="programme" id="programme">
+    <div class="container">
+      <p class="section-label">Die zwei Programme</p>
+      <h2 class="section-title">Wählen Sie den Weg, der zu Ihnen passt.</h2>
+      <p class="section-subtitle">Beide Programme arbeiten mit denselben drei Themen. Der Unterschied liegt darin, ob Sie allein als Inhaber starten oder gemeinsam mit Ihrem Team.</p>
+      <div class="programme-grid">
+
+        <div class="prog-card">
+          <span class="prog-tag">Online · 6 Wochen</span>
+          <h3>HANDWERK KOMPAKT Online</h3>
+          <p class="prog-sub">Führung lernen, ohne den Betrieb zu stoppen.</p>
+          <p>Sechs Wochen lang, immer ein Thema auf dem Tisch. Sie treffen sich mit maximal elf anderen Inhabern aus dem Handwerk über Zoom, arbeiten an echten Situationen aus dem Betriebsalltag und nehmen jede Woche eine konkrete Aufgabe mit.</p>
+          <p>Kein Betriebsausfall. Kein Seminarraum. Und keine Theorie, die drei Wochen später vergessen ist.</p>
+          <div class="price-row">
+            <span class="price">1.490 EUR</span>
+            <span class="price-note">zzgl. MwSt. &nbsp;|&nbsp; max. 12 Inhaber</span>
+          </div>
+          <a href="#kontakt" class="btn-coral">Platz anfragen</a>
+        </div>
+
+        <div class="prog-card">
+          <span class="prog-tag">Vor Ort · 1 Tag</span>
+          <h3>HANDWERK KOMPAKT Vor Ort</h3>
+          <p class="prog-sub">Ein Tag für Sie und Ihr Team. Mit Spielregeln, die danach gelten.</p>
+          <p>In einem Betrieb mit fünf Leuten merkt jeder sofort, wenn etwas nicht stimmt. Dieser Tag bringt Sie und Ihr Team an einen Tisch und erarbeitet gemeinsam Spielregeln, die danach im Alltag gelten. Konkret, schriftlich, verbindlich.</p>
+          <p>Exklusiv für Ihr Unternehmen. Bei Ihnen vor Ort. Kein Tagungshotel, keine fremden Stühle.</p>
+          <div class="price-row">
+            <span class="price">2.490 EUR</span>
+            <span class="price-note">zzgl. MwSt. &nbsp;|&nbsp; exklusiv für Ihr Unternehmen</span>
+          </div>
+          <a href="#kontakt" class="btn-coral">Termin anfragen</a>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- ALARM -->
+  <section class="alarm" id="alarm">
+    <div class="container">
+      <p class="section-label">Erkennungszeichen</p>
+      <h2>Wann sind Sie hier richtig?</h2>
+      <p class="alarm-lead">Das Problem ist selten fehlendes Fachwissen. Es ist fehlende Führungsroutine in einem Betrieb, in dem der Chef für alles zuständig ist und trotzdem nie Zeit hat, die wichtigen Gespräche zu führen.</p>
+      <div class="alarm-cols">
+
+        <div class="alarm-col">
+          <h3>Online — 5 Zeichen, dass dieser Kurs für Sie ist</h3>
+          <div class="alarm-list-items">
+            <div class="alarm-item"><span class="alarm-num">1</span><p>Konflikte im Team lösen Sie meistens zu spät, nämlich dann, wenn sie schon eskaliert sind.</p></div>
+            <div class="alarm-item"><span class="alarm-num">2</span><p>Feedback geben Sie vor allem, wenn etwas schiefgelaufen ist. Anerkennung bleibt dabei oft auf der Strecke.</p></div>
+            <div class="alarm-item"><span class="alarm-num">3</span><p>Ihr Tag gehört allen anderen. Was Sie sich für sich selbst vorgenommen haben, bleibt regelmäßig liegen.</p></div>
+            <div class="alarm-item"><span class="alarm-num">4</span><p>Sie ahnen, dass ein klärendes Gespräch helfen würde, und schieben es trotzdem auf.</p></div>
+            <div class="alarm-item"><span class="alarm-num">5</span><p>Sie führen aus dem Bauch heraus. Und das Bauchgefühl täuscht manchmal.</p></div>
+          </div>
+        </div>
+
+        <div class="alarm-col">
+          <h3>Vor Ort — 5 Zeichen, dass dieser Tag fällig ist</h3>
+          <div class="alarm-list-items">
+            <div class="alarm-item"><span class="alarm-num">1</span><p>Ihr Team weiß nicht genau, was Sie als Chef wirklich erwarten.</p></div>
+            <div class="alarm-item"><span class="alarm-num">2</span><p>Kritik gibt es im Betrieb, aber sie kommt entweder gar nicht an oder auf eine Art, die mehr schadet als nützt.</p></div>
+            <div class="alarm-item"><span class="alarm-num">3</span><p>Konflikte werden ausgesessen statt geklärt, weil niemand weiß, wie man das ohne Eskalation anspricht.</p></div>
+            <div class="alarm-item"><span class="alarm-num">4</span><p>Jeder macht seinen Job, aber das Gefühl, dass alle wirklich am selben Strang ziehen, fehlt.</p></div>
+            <div class="alarm-item"><span class="alarm-num">5</span><p>Sie als Chef sind derjenige, der alles zusammenhält. Immer. Auch dann, wenn Sie selbst gerade unter Strom stehen.</p></div>
+          </div>
+        </div>
+
+      </div>
+      <div class="alarm-bridge">
+        <p>Wenn Sie sich hier wiedererkennen, brauchen Sie kein weiteres Seminar. Sie brauchen <strong>drei funktionierende Routinen</strong>, damit der Laden ruhiger läuft und Sie abends wieder abschalten können.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- THEMEN -->
+  <section class="themen" id="themen">
+    <div class="container">
+      <p class="section-label">Die drei Themen</p>
+      <h2 class="section-title">Was Sie in beiden Programmen erarbeiten.</h2>
+      <p class="section-subtitle">Kein Führungsseminar mit Theorie, die drei Wochen später vergessen ist. Drei Themen, die in Ihrem Betriebsalltag wirklich brennen, eines nach dem anderen.</p>
+      <div class="themen-grid">
+
+        <div class="thema-card">
+          <p class="thema-num">Thema 01</p>
+          <h3>Zeit und Wirkung</h3>
+          <p>Sie lernen, Ihren Tag so zu strukturieren, dass das Wichtige nicht mehr ständig dem Dringenden weicht. Zwei Fokusblöcke pro Woche, die Sie aktiv verteidigen. Delegation, die wirklich funktioniert. Und das Gefühl, dass Sie Ihren Betrieb steuern und nicht umgekehrt.</p>
+        </div>
+
+        <div class="thema-card">
+          <p class="thema-num">Thema 02</p>
+          <h3>Klartext führen</h3>
+          <p>Feedback geben, das ankommt, in 60 Sekunden, ohne Drama und ohne dass jemand beleidigt ist. Anerkennung, die motiviert. Kritik, die etwas verändert. Konkret, direkt und so formuliert, dass Ihre Leute wissen, woran sie sind.</p>
+        </div>
+
+        <div class="thema-card">
+          <p class="thema-num">Thema 03</p>
+          <h3>Konflikte früh führen</h3>
+          <p>Spannungen im Team erkennen, bevor sie eskalieren. Ein Gespräch führen, das klärt statt aufheizt. Und eine Struktur, die Sie auch dann nutzen können, wenn es unangenehm wird.</p>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- ABLAUF -->
+  <section class="ablauf" id="ablauf">
+    <div class="container">
+      <p class="section-label">So läuft es</p>
+      <h2 class="section-title">Der Rhythmus, der Transfer sichert.</h2>
+      <p class="section-subtitle">Thema rein, eine Woche üben, Transfer-Check, dann das nächste Thema. So landet kein Inhalt im Seminarordner, sondern im Alltag.</p>
+      <div class="ablauf-cols">
+
+        <div class="ablauf-col">
+          <span class="col-tag">Online — 6 Wochen via Zoom</span>
+          <h3>Woche für Woche, ein Thema nach dem anderen.</h3>
+          <ul class="woche-list">
+            <li>
+              <span class="woche-label">Woche 1</span>
+              <div class="woche-text"><strong>Workshop: Zeit und Wirkung</strong><span>ca. 90 Minuten · max. 12 Inhaber</span></div>
+            </li>
+            <li>
+              <span class="woche-label">Woche 2</span>
+              <div class="woche-text"><strong>Transfer-Check Thema 1</strong><span>Was haben Sie umgesetzt? Was hat funktioniert? Was nicht? (30 Min.)</span></div>
+            </li>
+            <li>
+              <span class="woche-label">Woche 3</span>
+              <div class="woche-text"><strong>Workshop: Klartext führen</strong><span>ca. 90 Minuten · max. 12 Inhaber</span></div>
+            </li>
+            <li>
+              <span class="woche-label">Woche 4</span>
+              <div class="woche-text"><strong>Transfer-Check Thema 2</strong><span>Was ist hängengeblieben? Was braucht eine Justierung? (30 Min.)</span></div>
+            </li>
+            <li>
+              <span class="woche-label">Woche 5</span>
+              <div class="woche-text"><strong>Workshop: Konflikte früh führen</strong><span>ca. 90 Minuten · max. 12 Inhaber</span></div>
+            </li>
+            <li>
+              <span class="woche-label">Woche 6</span>
+              <div class="woche-text"><strong>Transfer-Check Thema 3</strong><span>Was nehmen Sie mit? Was gilt ab jetzt? (30 Min.)</span></div>
+            </li>
+          </ul>
+          <p class="ablauf-note">Zwischen den Terminen investieren Sie maximal 20 Minuten pro Woche. Immer mit einer konkreten Aufgabe, nie mit Lesehausaufgaben.</p>
+        </div>
+
+        <div class="ablauf-col">
+          <span class="col-tag">Vor Ort — 1 Tag in Ihrem Betrieb</span>
+          <h3>Vier Blöcke, die aufeinander aufbauen.</h3>
+          <ul class="block-list">
+            <li>
+              <strong>Block 1: Respekt und Ton im Betrieb (90 Min.)</strong>
+              <span>Viele Dinge, die als respektlos wahrgenommen werden, sind gar nicht so gemeint. Trotzdem wirken sie. Drei konkrete Regeln für Sprache und Verhalten, die jeder kennt und versteht.</span>
+            </li>
+            <li>
+              <strong>Block 2: Feedback, das wirklich ankommt (90 Min.)</strong>
+              <span>Anerkennung und Kritik in 60 Sekunden, so formuliert, dass sie etwas bewegen. Geübt an echten Situationen aus Ihrem Betrieb.</span>
+            </li>
+            <li>
+              <strong>Block 3: Konflikte früh ansprechen (90 Min.)</strong>
+              <span>Wie erkennt man, dass sich etwas anbahnt, bevor es kracht? Eine Gesprächsstruktur, die einfach genug ist, um sie wirklich zu nutzen.</span>
+            </li>
+            <li>
+              <strong>Block 4: Unsere Spielregeln (90 Min.)</strong>
+              <span>Wie reden wir hier miteinander? Wie klären wir Dinge, wenn etwas nicht stimmt? Das Ergebnis: eine Seite, schwarz auf weiß, die danach im Betrieb gilt.</span>
+            </li>
+          </ul>
+          <p class="ablauf-note">Zwei Wochen nach dem Tag: 60-minütiger Nachfass-Call. Was hat gehalten? Was braucht nochmal Aufmerksamkeit?</p>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- NUTZEN -->
+  <section class="nutzen">
+    <div class="container">
+      <p class="section-label">Was Sie davon haben</p>
+      <h2 class="section-title">Keine Versprechen. Konkrete Veränderungen.</h2>
+      <div class="nutzen-grid">
+        <div class="nutzen-card">
+          <div class="nutzen-icon">⚙️</div>
+          <h3>Weniger Reibung im Betrieb</h3>
+          <p>Ungeklärte Spannungen landen seltener auf Ihrem Tisch. Aufgaben werden zuverlässiger erledigt. Missverständnisse klären sich schneller, weil alle wissen, wie man Dinge anspricht.</p>
+        </div>
+        <div class="nutzen-card">
+          <div class="nutzen-icon">🎯</div>
+          <h3>Mehr Klarheit für Ihr Team</h3>
+          <p>Ihr Team weiß, was erwartet wird, wie Kritik gemeint ist und was gilt, wenn es knirscht. Sie müssen nicht mehr bei jedem Konflikt Schiedsrichter spielen.</p>
+        </div>
+        <div class="nutzen-card">
+          <div class="nutzen-icon">🔋</div>
+          <h3>Sie kommen abends wieder runter</h3>
+          <p>Weil Sie die wichtigen Gespräche führen, bevor etwas eskaliert statt danach. Weil Sie wissen, dass Sie Ihren Tag steuern und nicht umgekehrt.</p>
+        </div>
+      </div>
+      <div class="nutzen-messbar">
+        <h3>Messbar — damit es nicht beim Gefühl bleibt</h3>
+        <ul>
+          <li>Weniger ungeklärte Spannungen, die auf Ihrem Tisch landen</li>
+          <li>Weniger Aufgaben, die liegen bleiben, weil niemand wusste, was erwartet wird</li>
+          <li>Mehr Gespräche, die Sie proaktiv führen statt reaktiv</li>
+          <li>Ein Ton im Betrieb, der auch unter Druck trägt</li>
+        </ul>
+        <p class="nutzen-satz">Sie brauchen kein Führungsseminar. Sie brauchen drei funktionierende Routinen.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- EINSTIEG -->
+  <section class="einstieg" id="kontakt">
+    <div class="container">
+      <p class="section-label">Ihr Einstieg</p>
+      <h2 class="section-title">Der erste Schritt ist ein Gespräch. Kein Formular.</h2>
+      <div class="einstieg-grid">
+
+        <div class="einstieg-card primary">
+          <p class="einstieg-label">Schritt 1</p>
+          <h3>Erstgespräch</h3>
+          <p>Sie erzählen kurz, wo es bei Ihnen hakt. Wir hören zu und sagen Ihnen ehrlich, welches Programm passt und ob wir der richtige Partner für Sie sind.</p>
+          <p>Kein Formular. Kein Verkaufsgespräch. Nur Klarheit.</p>
+          <a href="mailto:office@rainerwinter.com?subject=HANDWERK%20KOMPAKT%20%E2%80%94%20Erstgespr%C3%A4ch%20anfragen" class="btn-coral">Gespräch anfragen</a>
+        </div>
+
+        <div class="einstieg-card secondary">
+          <p class="einstieg-label">Was danach passiert</p>
+          <h3>Wir klären gemeinsam</h3>
+          <p>Im Gespräch schauen wir, welches der beiden Formate zu Ihrer Situation passt:</p>
+          <ul>
+            <li>Online (6 Wochen, Gruppe, 1.490 EUR) — wenn Sie als Inhaber starten wollen, ohne den Betrieb zu stoppen</li>
+            <li>Vor Ort (1 Tag, exklusiv, 2.490 EUR) — wenn Sie gemeinsam mit Ihrem Team Spielregeln erarbeiten wollen</li>
+          </ul>
+          <p>Wenn es passt, legen wir direkt den Starttermin fest.</p>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- FAQ -->
+  <section class="faq" id="faq">
+    <div class="container">
+      <p class="section-label">Häufige Fragen</p>
+      <h2 class="section-title">Klar definiert. Direkt zitierbar.</h2>
+      <div class="faq-list">
+
+        <div class="faq-item">
+          <button class="faq-question">Für wen ist HANDWERK KOMPAKT gedacht?</button>
+          <div class="faq-answer">Für Inhaber von Handwerksbetrieben bis fünf Mitarbeitende, die im Alltag führen müssen, aber nie gelernt haben, wie das konkret geht. Kein Vorkenntnisse nötig, kein Theoriehintergrund. Nur die Bereitschaft, drei Gewohnheiten wirklich zu ändern.</div>
+        </div>
+
+        <div class="faq-item">
+          <button class="faq-question">Wie viel Zeit muss ich einplanen?</button>
+          <div class="faq-answer">Online: Sechs Termine über sechs Wochen (drei Workshops à 90 Min., drei Transfer-Checks à 30 Min.) plus maximal 20 Minuten Aufgabe pro Woche. Vor Ort: Ein halber Arbeitstag plus ein Nachfass-Call von 60 Minuten zwei Wochen später.</div>
+        </div>
+
+        <div class="faq-item">
+          <button class="faq-question">Was ist der Unterschied zwischen Online und Vor Ort?</button>
+          <div class="faq-answer">Online richtet sich an Sie als Inhaber allein. Sie arbeiten in einer Gruppe mit anderen Inhabern aus dem Handwerk und entwickeln Ihre eigene Führungsroutine. Vor Ort bringt Sie und Ihr Team an einen Tisch. Das Ergebnis sind gemeinsame Spielregeln, die danach im Betrieb für alle gelten.</div>
+        </div>
+
+        <div class="faq-item">
+          <button class="faq-question">Ist das Coaching oder Training?</button>
+          <div class="faq-answer">Weder noch, genau genommen. Es ist ein strukturiertes Kurzprogramm mit klarem Rhythmus: Impuls, Umsetzung, Transfer-Check. Jedes Thema bekommt eine Woche Praxis, bevor das nächste kommt. Ziel sind keine Aha-Momente, sondern Gewohnheiten, die im Alltag halten.</div>
+        </div>
+
+        <div class="faq-item">
+          <button class="faq-question">Wie starte ich?</button>
+          <div class="faq-answer">Mit einem kurzen Gespräch. Sie erzählen, wo es bei Ihnen hakt. Wir sagen Ihnen ehrlich, ob und welches Format passt. Kein Formular, kein Funnel. Schreiben Sie uns einfach eine Mail an office@rainerwinter.com oder rufen Sie an: 09421 9617993.</div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- TRAINER -->
+  <section class="trainer">
+    <div class="container">
+      <p class="section-label">Wer dahintersteht</p>
+      <h2 class="section-title">Keine Methode ersetzt Haltung. Kein Training ersetzt Konsequenz.</h2>
+      <div class="trainer-card" style="display:grid; grid-template-columns: 200px 1fr; gap: 40px; max-width: 860px; align-items: start;">
+        <img src="Rainer.png" alt="Rainer Winter" style="width:200px; height:240px; object-fit:cover; object-position: center top; border-radius:10px; display:block;" />
+        <div>
+        <h3>Rainer Winter</h3>
+        <p class="trainer-role">Gründer · WINTERFEST Leadership Academy</p>
+        <p>Rainer Winter arbeitet seit über zehn Jahren mit Führungskräften, die im Alltag liefern müssen und keine Zeit für Theorie haben. Er bringt Klarheit in Situationen, in denen andere noch diskutieren, und arbeitet ausschließlich mit dem, was in Ihrem Betrieb wirklich da ist.</p>
+        <p>Er kommt zu Ihnen, nicht in einen Seminarraum.</p>
+        <div class="trainer-stats">
+          <span class="trainer-stat">10+ Jahre Erfahrung</span>
+          <span class="trainer-stat">200+ Führungskräfte begleitet</span>
+          <span class="trainer-stat">60+ Unternehmen</span>
+        </div>
+        <p class="trainer-contact">
+          ✉️ <a href="mailto:office@rainerwinter.com">office@rainerwinter.com</a> &nbsp;·&nbsp;
+          📞 <a href="tel:+4994219617993">09421 9617993</a>
+        </p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- FINAL CTA -->
+  <section class="final-cta">
+    <h2>Der erste Schritt ist ein Gespräch.<br>Kein Formular.</h2>
+    <p>Sie erzählen, wo es bei Ihnen hakt. Wir sagen Ihnen ehrlich, welches Programm passt und ob wir der richtige Partner für Sie sind.</p>
+    <a href="mailto:office@rainerwinter.com?subject=HANDWERK%20KOMPAKT%20%E2%80%94%20Erstgespr%C3%A4ch%20anfragen" class="btn-coral-lg">Gespräch anfragen</a>
+    <p class="cta-email-line">
+      Oder direkt: <a href="tel:+4994219617993">09421 9617993</a> &nbsp;·&nbsp;
+      <a href="mailto:office@rainerwinter.com">office@rainerwinter.com</a>
+    </p>
+  </section>
+
+  <!-- FOOTER -->
+  <footer>
+    <div class="footer-links">
+      <a href="https://winterfest.academy">winterfest.academy</a>
+      <a href="mailto:office@rainerwinter.com">Kontakt</a>
+      <a href="https://www.winterfest.academy/impressum">Impressum</a>
+      <a href="https://www.winterfest.academy/datenschutz">Datenschutz</a>
+    </div>
+    <p>© 2026 WINTERFEST Leadership Academy · Rainer Winter · Regensburger Str. 79 · 94315 Straubing</p>
+  </footer>
+
+  <script>
+    // Mobile nav
+    (function () {
+      var btn = document.getElementById('navToggle');
+      if (!btn) return;
+      btn.addEventListener('click', function () {
+        document.documentElement.classList.toggle('nav-open');
+        var expanded = document.documentElement.classList.contains('nav-open');
+        btn.setAttribute('aria-label', expanded ? 'Menü schließen' : 'Menü öffnen');
+      });
+      document.querySelectorAll('.nav-links a').forEach(function (link) {
+        link.addEventListener('click', function () {
+          document.documentElement.classList.remove('nav-open');
+          btn.setAttribute('aria-label', 'Menü öffnen');
+        });
+      });
+    })();
+
+    // Smooth scroll
+    document.querySelectorAll('a[href^="#"]').forEach(function(anchor) {
+      anchor.addEventListener('click', function (e) {
+        var href = this.getAttribute('href');
+        if (href === '#' || href === null) return;
+        var target = document.querySelector(href);
+        if (target) {
+          e.preventDefault();
+          target.scrollIntoView({ behavior: 'smooth', block: 'start' });
+        }
+      });
+    });
+
+    // FAQ accordion
+    document.querySelectorAll('.faq-item').forEach(function(item){
+      var q = item.querySelector('.faq-question');
+      if (!q) return;
+      q.addEventListener('click', function(){
+        var isActive = item.classList.contains('active');
+        document.querySelectorAll('.faq-item.active').forEach(function(open){
+          open.classList.remove('active');
+        });
+        if (!isActive) item.classList.add('active');
+      });
+    });
+  </script>
+
+</body>
+</html>
