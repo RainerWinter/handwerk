@@ -57,7 +57,9 @@
     /* ========== PROGRAMME ========== */
     .programme { background: #f4f6f9; }
     .programme-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 24px; margin-top: 48px; }
-    .prog-card { background: #fff; border-radius: 12px; border: 1px solid #eee; padding: 40px; }
+    .prog-card { background: #fff; border-radius: 12px; border: 1px solid #eee; overflow: hidden; }
+    .prog-card-img { width: 100%; height: 220px; object-fit: cover; display: block; }
+    .prog-card-body { padding: 40px; }
     .prog-card .prog-tag { display: inline-block; font-size: 11px; font-weight: 700; letter-spacing: 2px; text-transform: uppercase; color: #fe745c; margin-bottom: 16px; }
     .prog-card h3 { font-size: 24px; font-weight: 800; margin-bottom: 8px; }
     .prog-card .prog-sub { font-size: 15px; color: #888; font-style: italic; margin-bottom: 20px; }
@@ -282,29 +284,35 @@
       <div class="programme-grid">
 
         <div class="prog-card">
-          <span class="prog-tag">Online · 6 Wochen</span>
-          <h3>HANDWERK KOMPAKT Online</h3>
-          <p class="prog-sub">Führung lernen, ohne den Betrieb zu stoppen.</p>
-          <p>Sechs Wochen lang, immer ein Thema auf dem Tisch. Sie treffen sich mit maximal elf anderen Inhabern aus dem Handwerk über Zoom, arbeiten an echten Situationen aus dem Betriebsalltag und nehmen jede Woche eine konkrete Aufgabe mit.</p>
-          <p>Kein Betriebsausfall. Kein Seminarraum. Und keine Theorie, die drei Wochen später vergessen ist.</p>
-          <div class="price-row">
-            <span class="price">1.490 EUR</span>
-            <span class="price-note">zzgl. MwSt. &nbsp;|&nbsp; max. 12 Inhaber</span>
+          <img src="laptopwerkstatt.png" alt="Handwerker mit Laptop in der Werkstatt" class="prog-card-img" />
+          <div class="prog-card-body">
+            <span class="prog-tag">Online · 6 Wochen</span>
+            <h3>HANDWERK KOMPAKT Online</h3>
+            <p class="prog-sub">Führung lernen, ohne den Betrieb zu stoppen.</p>
+            <p>Sechs Wochen lang, immer ein Thema auf dem Tisch. Sie treffen sich mit maximal elf anderen Inhabern aus dem Handwerk über Zoom, arbeiten an echten Situationen aus dem Betriebsalltag und nehmen jede Woche eine konkrete Aufgabe mit.</p>
+            <p>Kein Betriebsausfall. Kein Seminarraum. Und keine Theorie, die drei Wochen später vergessen ist.</p>
+            <div class="price-row">
+              <span class="price">1.490 EUR</span>
+              <span class="price-note">zzgl. MwSt. &nbsp;|&nbsp; max. 12 Inhaber</span>
+            </div>
+            <a href="#kontakt" class="btn-coral">Platz anfragen</a>
           </div>
-          <a href="#kontakt" class="btn-coral">Platz anfragen</a>
         </div>
 
         <div class="prog-card">
-          <span class="prog-tag">Vor Ort · 1 Tag</span>
-          <h3>HANDWERK KOMPAKT Vor Ort</h3>
-          <p class="prog-sub">Ein Tag für Sie und Ihr Team. Mit Spielregeln, die danach gelten.</p>
-          <p>In einem Betrieb mit fünf Leuten merkt jeder sofort, wenn etwas nicht stimmt. Dieser Tag bringt Sie und Ihr Team an einen Tisch und erarbeitet gemeinsam Spielregeln, die danach im Alltag gelten. Konkret, schriftlich, verbindlich.</p>
-          <p>Exklusiv für Ihr Unternehmen. Bei Ihnen vor Ort. Kein Tagungshotel, keine fremden Stühle.</p>
-          <div class="price-row">
-            <span class="price">2.490 EUR</span>
-            <span class="price-note">zzgl. MwSt. &nbsp;|&nbsp; exklusiv für Ihr Unternehmen</span>
+          <img src="meetingwerkstatt.png" alt="Team-Meeting in der Werkstatt" class="prog-card-img" />
+          <div class="prog-card-body">
+            <span class="prog-tag">Vor Ort · 1 Tag</span>
+            <h3>HANDWERK KOMPAKT Vor Ort</h3>
+            <p class="prog-sub">Ein Tag für Sie und Ihr Team. Mit Spielregeln, die danach gelten.</p>
+            <p>In einem Betrieb mit fünf Leuten merkt jeder sofort, wenn etwas nicht stimmt. Dieser Tag bringt Sie und Ihr Team an einen Tisch und erarbeitet gemeinsam Spielregeln, die danach im Alltag gelten. Konkret, schriftlich, verbindlich.</p>
+            <p>Exklusiv für Ihr Unternehmen. Bei Ihnen vor Ort. Kein Tagungshotel, keine fremden Stühle.</p>
+            <div class="price-row">
+              <span class="price">2.490 EUR</span>
+              <span class="price-note">zzgl. MwSt. &nbsp;|&nbsp; exklusiv für Ihr Unternehmen</span>
+            </div>
+            <a href="#kontakt" class="btn-coral">Termin anfragen</a>
           </div>
-          <a href="#kontakt" class="btn-coral">Termin anfragen</a>
         </div>
 
       </div>
@@ -574,7 +582,7 @@
   </section>
 
   <!-- FINAL CTA -->
-  <section class="final-cta">
+  <section class="final-cta" style="background: linear-gradient(rgba(26,46,74,0.82), rgba(26,46,74,0.82)), url('Rainer.png') center center / cover no-repeat;">
     <h2>Der erste Schritt ist ein Gespräch.<br>Kein Formular.</h2>
     <p>Sie erzählen, wo es bei Ihnen hakt. Wir sagen Ihnen ehrlich, welches Programm passt und ob wir der richtige Partner für Sie sind.</p>
     <a href="mailto:office@rainerwinter.com?subject=HANDWERK%20KOMPAKT%20%E2%80%94%20Erstgespr%C3%A4ch%20anfragen" class="btn-coral-lg">Gespräch anfragen</a>
